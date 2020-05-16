@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
   end
 
   def new
@@ -12,7 +13,23 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktails.new(params[:cocktail])
-    @cocktail.save
+    @cocktail = Cocktail.new(cocktail_params)
+
+    respond_to do |format|
+      if @cocktail.save
+        format.html { redirect_to @cocktail, notice: 'cocktail was successfully created' }
+        format.json { render :show, status: :created, location: @cocktail }
+      else
+        format.html { render :new }
+        format.json { render json: @cocktail.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
+private
+
+def cocktail_params
+  params.require(:cocktail).permit(:name)
+end
+
 end
