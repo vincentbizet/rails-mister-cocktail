@@ -15,7 +15,4 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktails.new(params[:cocktail])
     @cocktail.save
   end
-
-  def home
-  end
 end
