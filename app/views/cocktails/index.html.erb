@@ -1,9 +1,6 @@
-
-<h1 class ='text-center'>Nos cocktails favoris</h1>
-
-<div class="grid-css">
+<div class="cards container">
   <% @cocktails.each do |cocktail| %>
-  <div class="img_card"> <%= cocktail.name %> </div>
-  <% end %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"><%= cocktail.name %> </div><% end %>
 </div>
+
 
