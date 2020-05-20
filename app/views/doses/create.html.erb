@@ -1,1 +1,11 @@
 <h1>Que faut-il ajouter ?</h1>
+
+<%= form_for (@doses) do |f|  %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity %>
+  <%= f.submit %>
+<% end %>

@@ -14,3 +14,8 @@ ingredients["drinks"].each do |ingredient|
   i = Ingredient.create(name: ingredient["strIngredient1"])
   puts "create #{i.name}"
 end
+
+Cocktail.destroy_all
+Coctail.new(name: 'Loco-cktail')
+Coctail.new(name: 'Cuba Libre')
+Coctail.new(name: 'Vodka-Martini')
